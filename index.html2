@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style_new.css" />
+  <title>RecordArte</title>
+</head>
+
+<body>
+  <header>
+    <img src="/favicon.png" />
+    <h1>Museo Recordarte</h1> <!-- Centrar el texto luego -->
+  </header>
+
+  <div class="contenido__container" id="modular">
+    <div class="contenido">
+      <h3>Acá que vaya el cuerpo del texto y ver qué más info tengo que ver</h3>
+      <p>MMolestie rutrum, tristique, imperdiet eleifend nisl tortor velit morbi in. Est euismod dui ante dignissim
+        lectus nisl proin vulputate finibus. Tincidunt platea placerat imperdiet dolor, in proin in ac egestas. Neque
+        integer, nisi nullam sagittis pellentesque eget, eleifend ridiculus elementum. Eu tincidunt, nunc non nec
+        dignissim, consectetur adipiscing nullam eu. Erat praesent, dolor tristique, purus id amet tristique varius
+        porttitor. Nisl, vivamus, magna volutpat tellus velit augue dignissim porttitor convallis. Eros lacus imperdiet
+        congue nunc pharetra, convallis vitae tempor leEros elementum pharetra, euismod convallis, nec nulla faucibus
+        nullam dignissim. Nec nulla in ultricies nunc, in hac at aliquet habitasse. Sed dignissim tristique hac ipsum,
+        euismod varius aliquam et varius. Ex, faucibus donec dictum, vestibulum bibendum convallis id ornare eu.
+        Faucibus eros tincidunt pellentesque, nam vestibulum cras neque, praesent vel. Quis arcu dolor finibus lectus
+        nunc natoque etiam, consectetur et. Leo sit, non posuere nisl amet, eget vestibulum iaculis mus. Tincidunt
+        convallis libero aliquam arcu nullam sem arcu dictumst ligula. Vulputate augue varius, curabitur molestie,
+        dictum porta sed dapibus eros. Vulputate euismod ac dignissim, tortor, augue tristique varius suspendisse
+        curabitur.oolestie rutrum, tristique, imperdiet eleifend nisl tortor velit morbi in. Est euismod dui ante
+        dignissim lectus nisl proin vulputate finibus. Tincidunt platea placerat imperdiet dolor, in proin in ac
+        egestas. Neque integer, nisi nullam sagittis pellentesque eget, eleifend ridiculus elementum. Eu tincidunt, nunc
+        non nec dignissim, consectetur adipiscing nullam eu. Erat praesent, dolor tristique, purus id amet tristique
+        varius porttitor. Nisl, vivamus, magna volutpat tellus velit augue dignissim porttitor convallis. Eros lacus
+        imperdiet congue nunc pharetra, convallis vitae tempor leEros elementum pharetra, euismod convallis, nec nulla
+        faucibus nullam dignissim. Nec nulla in ultricies nunc, in hac at aliquet habitasse. Sed dignissim tristique hac
+        ipsum, euismod varius aliquam et varius. Ex, faucibus donec dictum, vestibulum bibendum convallis id ornare eu.
+        Faucibus eros tincidunt pellentesque, nam vestibulum cras neque, praesent vel. Quis arcu dolor finibus lectus
+        nunc natoque etiam, consectetur et. Leo sit, non posuere nisl amet, eget vestibulum iaculis mus. Tincidunt
+        convallis libero aliquam arcu nullam sem arcu dictumst ligula. Vulputate augue varius, curabitur molestie,
+        dictum porta sed dapibus eros. Vulputate euismod ac dignissim, tortor, augue tristique varius suspendisse
+        curabitur.o
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </p>
+    </div>
+  </div>
+  <button id="contenido" onclick="showContent()">Logo</button>
+
+  <footer>
+    <p>Museo Recordarte</p>
+    <p>Esto es el Footer!! acá el gordo Gaspar pone logos y así ns</p>
+    <div>
+      <!-- arreglar el label y texto que aparece encima -->
+      <a label="Instagram" src="instagram-svgrepo-com.svg" class="icons"></a>
+      <a alt="YouTube" src="youtube-svgrepo-com.svg" class="icons"></a>
+    </div>
+  </footer>
+  <button id="parriba" onclick="topFunction()">↑</button>
+  <script src="source.js"></script>
+</body>
+
+</html>
