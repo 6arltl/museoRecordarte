@@ -142,30 +142,6 @@ body::after {
 }
 
 /* ---------- header ---------- */
-.statuschip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  flex: none
-}
-
-.statuschip .led {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--panel-dim);
-  flex: none
-}
-
-.statuschip.on .led {
-  background: #7FC98B
-}
-
-.statuschip.off .led {
-  background: var(--spot-on-ink)
-}
-
 .mast {
   position: sticky;
   top: 0;
@@ -208,44 +184,10 @@ body::after {
   font-size: 14.5px
 }
 
-.mnav a {
-  color: var(--panel-dim);
-  padding: 6px 0;
-  border-bottom: 2px solid transparent;
-  transition: color .2s, border-color .2s
-}
-
-.mnav a:hover {
-  color: var(--panel-ink)
-}
-
-.mnav a[aria-current="page"] {
-  color: var(--panel-ink);
-  border-color: var(--spot-on-ink)
-}
-
 .mast-right {
   display: flex;
   align-items: center;
   gap: 18px
-}
-
-.mast .statuschip {
-  font-size: 13px;
-  color: var(--panel-ink)
-}
-
-.mast .btn.mbtn {
-  padding: 11px 18px;
-  font-size: 14px;
-  background: var(--spot-on-ink);
-  border-color: var(--spot-on-ink);
-  color: var(--panel)
-}
-
-.mast .btn.mbtn:hover {
-  background: transparent;
-  color: var(--spot-on-ink)
 }
 
 @media(max-width:1100px) {
@@ -270,43 +212,12 @@ body::after {
   }
 }
 
-.burger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-  padding: 9px 2px
-}
-
-.burger span {
-  width: 24px;
-  height: 2.5px;
-  background: var(--panel-ink);
-  transition: .3s
-}
-
-.burger.open span:nth-child(1) {
-  transform: translateY(7.5px) rotate(45deg)
-}
-
-.burger.open span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0)
-}
-
-.burger.open span:nth-child(3) {
-  transform: translateY(-7.5px) rotate(-45deg)
-}
-
 @media(max-width:1100px) {
   .burger {
     display: flex
   }
 }
 
-/* nav overlay (mobile) */
 .contents {
   position: fixed;
   inset: 0;
@@ -323,47 +234,10 @@ body::after {
   transform: none
 }
 
-.contents a.pg {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 17px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .14)
-}
-
-.contents a.pg b {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: 29px;
-  color: var(--panel-ink)
-}
-
-.contents a.pg span {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--panel-dim);
-  text-align: right
-}
-
 .contents a.pg[aria-current="page"] b {
   color: var(--spot-on-ink)
 }
 
-.contents .c-meta {
-  font-family: var(--sans);
-  font-size: 14px;
-  margin-top: 28px;
-  line-height: 2
-}
-
-.contents .c-meta a {
-  color: var(--panel-ink);
-  font-weight: 600
-}
-
-/* ---------- home : hero ---------- */
-/* hero-wrap: hero + ticker fill 100svh below the sticky header */
 .hero-wrap {
   display: flex;
   flex-direction: column;
@@ -431,18 +305,6 @@ body::after {
   border-color: #FFF9EC
 }
 
-.hero .btn.ghost {
-  background: transparent;
-  border-color: #FFF9EC;
-  color: #FFF9EC
-}
-
-.hero .btn.ghost:hover {
-  background: #FFF9EC;
-  color: var(--panel)
-}
-
-/* the oven strip : live marquee on the accent band */
 .fold {
   background: #354F34;
   color: var(--band-ink);
@@ -451,41 +313,6 @@ body::after {
   position: relative
 }
 
-.fold .tick {
-  display: inline-block;
-  padding: 14px 0;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 14.5px;
-  animation: tickscroll 36s linear infinite;
-  will-change: transform
-}
-
-.fold:hover .tick {
-  animation-play-state: paused
-}
-
-.fold .tick b {
-  font-weight: 800
-}
-
-.fold .tick i {
-  font-style: normal;
-  opacity: .65;
-  padding: 0 18px
-}
-
-@keyframes tickscroll {
-  from {
-    transform: translateX(0)
-  }
-
-  to {
-    transform: translateX(-50%)
-  }
-}
-
-/* home : the counter through the day (photo tiles) */
 .tiles {
   padding: clamp(46px, 6vw, 88px) 0
 }
@@ -1685,7 +1512,7 @@ body[data-pack="charcoal"] .sun-ok {
 }
 
 .pt p a {
-  border-bottom: 1.5px solid var(--spot)
+  border-bottom: 1.5px solid #385136;
 }
 
 body[data-pack="forest"] .pt p a,

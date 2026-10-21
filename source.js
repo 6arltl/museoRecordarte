@@ -1,4 +1,5 @@
 // Boton para Subir ----------
+parriba.addEventListener("click", topFunction);
 let button = document.getElementById("parriba");
 
 window.onscroll = function () {
@@ -15,6 +16,7 @@ function scrollFunction() {
 
 function topFunction() {
   document.documentElement.scrollTop = 0;
+  console.log("funciona");
 }
 
 // Botón Modular ----------

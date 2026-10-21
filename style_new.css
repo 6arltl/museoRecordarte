@@ -124,6 +124,7 @@ footer {
 h2 {
   width: max-content;
   position: relative;
+  cursor: default;
 }
 
 h2::after {
@@ -140,4 +141,12 @@ h2::after {
 
 h2:hover::after {
   width: 100%;
+}
+
+.foot__cont:hover {
+  color: #F2E9DB;
+}
+
+.hlink__ausencia {
+  cursor: pointer;
 }
