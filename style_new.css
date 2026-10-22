@@ -163,12 +163,11 @@ h2:hover::after {
   margin-top: 15px;
   align-items: center;
   justify-items: center;
+  transition: transform .7s cubic-bezier(.16, .6, .2, 1)
 }
 
 .div1 {
   grid-row: span 3 / span 3;
-  background-image: url("https://c0.klipartz.com/pngpicture/98/371/gratis-png-pintor-artista-pintor-pintura.png");
-  object-fit: cover;
 }
 
 .div2 {
@@ -177,4 +176,14 @@ h2:hover::after {
 
 .div3 {
   grid-row: span 3 / span 3;
+}
+
+.parent>div>img {
+  transition: all .7s cubic-bezier(.16, .6, .2, 1);
+  box-shadow: 0 0 0 #00000077;
+}
+
+.parent>div>img:hover {
+  transform: scale(1.035);
+  box-shadow: 11px 15px 15px 3px #00000077
 }
