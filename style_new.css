@@ -150,3 +150,31 @@ h2:hover::after {
 .hlink__ausencia {
   cursor: pointer;
 }
+
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 85px;
+  margin-left: 75px;
+  margin-right: 75px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  align-items: center;
+  justify-items: center;
+}
+
+.div1 {
+  grid-row: span 3 / span 3;
+  background-image: url("https://c0.klipartz.com/pngpicture/98/371/gratis-png-pintor-artista-pintor-pintura.png");
+  object-fit: cover;
+}
+
+.div2 {
+  grid-row: span 3 / span 3;
+}
+
+.div3 {
+  grid-row: span 3 / span 3;
+}
