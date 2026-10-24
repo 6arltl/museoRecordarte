@@ -21,7 +21,7 @@ function topFunction() {
 
 // Botón Modular ----------
 
-let button_contenido = document.getElementById("contenido");
+let button_contenido = document.getElementsByClassName("obra");
 let modular = document.getElementById("modular");
 
 function showContent() {
@@ -89,4 +89,15 @@ function chicoschicos() {
 function reiniciarTodo() {
   console.log("Limpiando");
   document.body.style.filter = "none";
+}
+
+let pinturas = document.querySelectorAll(".obra"); // O el selector correcto
+const modal = document.getElementById("modal__window");
+
+pinturas.forEach(function (pintura) {
+  pintura.addEventListener("click", windowshow);
+});
+
+function windowshow() {
+  modal.style.display = "block";
 }
