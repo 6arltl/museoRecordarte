@@ -1466,7 +1466,8 @@ body[data-pack="charcoal"] .sun-ok {
 .hgroup .hd {
   font-family: var(--display);
   font-size: clamp(18px, 1.7vw, 22px);
-  color: var(--ink)
+  color: var(--ink);
+  line-height: normal;
 }
 
 .hgroup .ht {
@@ -1488,6 +1489,16 @@ body[data-pack="charcoal"] .sun-ok {
   padding: 2px 7px;
   position: relative;
   top: -2px
+}
+
+.hdisable {
+  background-color: #e7ded0;
+}
+
+.hdisable>.ht,
+.hdisable>.hd {
+  color: #8b7e70;
+  font-style: italic;
 }
 
 .particulars {
