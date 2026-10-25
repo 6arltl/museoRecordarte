@@ -151,39 +151,259 @@ h2:hover::after {
   cursor: pointer;
 }
 
+/* ==========================================================================
+   Grilla de Flyers / Obras (Responsive)
+   ========================================================================== */
 
 .parent {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  gap: 85px;
-  margin-left: 75px;
-  margin-right: 75px;
-  margin-bottom: 30px;
-  margin-top: 15px;
+  /* Se adapta automáticamente: 1 columna en móvil, 2 en tablet, 3 en escritorio */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  width: min(1200px, 100% - clamp(2rem, 6vw, 6rem));
+  margin: 2.5rem auto 3.5rem auto;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* Tarjeta individual */
+.parent>div[class^="div"] {
+  display: flex;
+  flex-direction: column;
+  background-color: tan;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.parent>div[class^="div"]:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagen del flyer */
+.parent>div[class^="div"]>img.obra {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caja de información debajo de la imagen */
+.card-info,
+.parent>div[class^="div"]>div {
+  padding: 1rem 1.25rem 1.25rem;
+  background-color: tan;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-info h4,
+.parent>div[class^="div"] h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  color: #1e1e1e;
+}
+
+.card-info blockquote,
+.parent>div[class^="div"] blockquote {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #333333;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   Modal Window
+   ========================================================================== */
+
+#modal__window {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
   align-items: center;
-  justify-items: center;
-  transition: transform .7s cubic-bezier(.16, .6, .2, 1)
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+
+  /* Oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.div1 {
-  grid-row: span 3 / span 3;
+#modal__window.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-.div2 {
-  grid-row: span 3 / span 3;
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-.div3 {
-  grid-row: span 3 / span 3;
+.modal__card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 880px;
+  max-height: 90vh;
+  background-color: #faf7f2;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.parent>div>img {
-  transition: all .7s cubic-bezier(.16, .6, .2, 1);
-  box-shadow: 0 0 0 #00000077;
+#modal__window.is-active .modal__card {
+  transform: translateY(0) scale(1);
 }
 
-.parent>div>img:hover {
-  transform: scale(1.035);
-  box-shadow: 11px 15px 15px 3px #00000077
+.modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 30;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.modal__close:hover {
+  background: #e6003a;
+  transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   Zoom Estilo Amazon dentro del Modal
+   ========================================================================== */
+
+.modal__media {
+  position: relative;
+  width: 100%;
+  max-height: 380px;
+  background-color: #1a1a1a;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.modal__media img#zoom__base_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.zoom__lens {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-color: rgba(230, 0, 58, 0.25);
+  border: 1px solid rgba(230, 0, 58, 0.8);
+  pointer-events: none;
+  display: none;
+  z-index: 5;
+}
+
+.modal__right {
+  position: relative;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  background-color: #faf7f2;
+}
+
+.modal__content {
+  padding: 1.5rem 2rem 2rem;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.modal__content h1 {
+  font-family: 'Recordarte', serif, sans-serif;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.75rem;
+  color: #1e1e1e;
+  text-transform: uppercase;
+  line-height: 3rem;
+}
+
+.modal__content p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  text-align: justify;
+}
+
+.modal__zoom_window {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background-color: #111;
+  display: none;
+  z-index: 10;
+}
+
+.modal__zoom_window img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .modal__card {
+    flex-direction: row;
+    height: 500px;
+    max-height: 85vh;
+  }
+
+  .modal__media {
+    width: 48%;
+    max-height: 100%;
+  }
+
+  .modal__right {
+    width: 52%;
+    height: 100%;
+  }
+
+  .modal__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

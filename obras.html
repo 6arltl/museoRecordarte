@@ -69,49 +69,62 @@
       </div>
     </div>
   </section>
-
-
   <div class="parent">
-    <div class="div1"><img src="Flyer.png" class="obra">
-      <div style="background-color: tan; padding: .5rem; border-radius:0 0 15px 15px">
-        <h4 style="margin-bottom: .4rem;">Obra de Tati Cabral</h4>
+    <div class="div1">
+      <img src="Flyer.png" class="obra" alt="Obra de Tati Cabral">
+      <div class="card-info">
+        <h4>Obra de Tati Cabral</h4>
         <blockquote>ObraPraesent lorem molestie gravida sed suscipit, diam praesent nibh convallis. Nibh enim amet elit
-          est. </blockquote>
+          est.</blockquote>
       </div>
     </div>
 
-    <div class="div2"><img src="Flyer.png" class="obra">
-      <div style="background-color: tan; padding: .5rem; border-radius:0 0 15px 15px">
-        <h4 style="margin-bottom: .4rem;">Obra de Tati Cabral</h4>
+    <div class="div2">
+      <img src="Flyer.png" class="obra" alt="Obra de Tati Cabral">
+      <div class="card-info">
+        <h4>Obra de Tati Cabral</h4>
         <blockquote>ObraPraesent lorem molestie gravida sed suscipit, diam praesent nibh convallis. Nibh enim amet elit
-          est. </blockquote>
+          est.</blockquote>
       </div>
     </div>
 
     <div class="div3">
-      <img src="Flyer.png" class="obra">
-      <div style="background-color:tan; padding: .5rem; border-radius:0 0 15px 15px">
-        <h4 style="margin-bottom: .4rem;">Obra de Tati Cabral</h4>
-        <blockquote>ObraPraesent lorem molestie gravida sed suscipit, diam praesent
-          nibh convallis. Nibh enim amet elit
-          est. </blockquote>
-      </div>
-
-    </div>
-
-    <div id="modal__window" style="position: absolute; display: block">
-      <img src=" Flyer.png" alt="" />
-      <div>
-        <h1>Obra de Arte</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ducimus velit delectus illo tempore quos
-          ad nisi eligendi repudiandae corporis. Vitae voluptatibus tenetur corrupti quae deleniti laboriosam est ipsa
-          quo.</p>
+      <img src="Flyer.png" class="obra" alt="Obra de Tati Cabral">
+      <div class="card-info">
+        <h4>Obra de Tati Cabral</h4>
+        <blockquote>ObraPraesent lorem molestie gravida sed suscipit, diam praesent nibh convallis. Nibh enim amet elit
+          est.</blockquote>
       </div>
     </div>
-
   </div>
+  <!-- Modal Window con Zoom Integrado -->
+  <div id="modal__window" class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__card">
+      <button class="modal__close" aria-label="Cerrar modal">&times;</button>
 
+      <!-- Contenedor izquierdo: Imagen + Lente selector -->
+      <div class="modal__media" id="zoom__container">
+        <div class="zoom__lens" id="zoom__lens"></div>
+        <img src="Flyer.png" alt="Obra de Arte" id="zoom__base_img" />
+      </div>
 
+      <!-- Contenedor derecho: Texto y visor de aumento -->
+      <div class="modal__right">
+        <!-- Información habitual de la obra -->
+        <div class="modal__content" id="modal__text_content">
+          <h1>Obra de Arte</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ducimus velit delectus illo tempore quos
+            ad nisi eligendi repudiandae corporis.</p>
+        </div>
+
+        <!-- Ventana de aumento (se superpone al hacer hover) -->
+        <div class="modal__zoom_window" id="zoom__window">
+          <img src="Flyer.png" alt="Detalle ampliado" id="zoom__target_img" />
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <footer class="foot">
