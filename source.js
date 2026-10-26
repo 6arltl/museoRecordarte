@@ -204,3 +204,66 @@ document.addEventListener("DOMContentLoaded", () => {
     zoomWindow.style.display = "none";
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".carousel-container");
+  if (!container) return;
+
+  const slides = container.querySelectorAll(".carousel-slide");
+  const prevBtn = container.querySelector(".carousel-btn.prev");
+  const nextBtn = container.querySelector(".carousel-btn.next");
+  const dotsContainer = container.querySelector(".carousel-dots");
+
+  let currentIndex = 0;
+
+  // Generar dinámicamente los bullets según la cantidad de diapositivas
+  slides.forEach((_, idx) => {
+    const dot = document.createElement("button");
+    dot.classList.add("carousel-dot");
+    dot.setAttribute("aria-label", `Ir a imagen ${idx + 1}`);
+    if (idx === 0) dot.classList.add("active");
+
+    dot.addEventListener("click", () => {
+      goToSlide(idx);
+    });
+
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll(".carousel-dot");
+
+  function updateCarousel() {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle("active", idx === currentIndex);
+    });
+
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle("active", idx === currentIndex);
+    });
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  // Soporte de navegación por teclado (flechas izquierda/derecha)
+  container.setAttribute("tabindex", "0");
+  container.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") prevSlide();
+    if (e.key === "ArrowRight") nextSlide();
+  });
+});
