@@ -69,6 +69,7 @@
   height: 3rem;
   box-shadow: 5px 5px 15px black;
   transition: opacity 0.2s;
+  z-index: 200;
 }
 
 /**/
@@ -201,6 +202,7 @@ h2:hover::after {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  z-index: 10;
 }
 
 .card-info h4,
@@ -318,7 +320,7 @@ h2:hover::after {
 .modal__media img#zoom__base_img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -380,7 +382,7 @@ h2:hover::after {
   width: 200%;
   height: 200%;
   max-width: none;
-  object-fit: cover;
+  object-fit: contain;
   pointer-events: none;
 }
 
