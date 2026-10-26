@@ -352,7 +352,7 @@ h2:hover::after {
 .modal__content h1 {
   font-family: 'Recordarte', serif, sans-serif;
   margin: 0 0 0.75rem 0;
-  font-size: 1.75rem;
+  font-size: 1.2rem;
   color: #1e1e1e;
   text-transform: uppercase;
   line-height: 3rem;
