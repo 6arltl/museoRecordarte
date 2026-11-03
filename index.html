@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Museo RecordArte</title>
-  <meta name="description" content="Un proyecto transmedia sobre el CPM, la memoria y el arte">
+  <title>Museo RecordArte | Memoria, Verdad y Justicia</title>
+  <meta name="description"
+    content="Un proyecto transmedia sobre la Casa por la Memoria del Chaco, explorando la intersección entre los derechos humanos y el arte.">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="fonts.css" />
   <link rel="stylesheet" href="style_new.css" />
+  <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
 </head>
 
 <body>
   <header class="mast">
     <div class="wrap">
       <div class="inline">
-        <img src="/favicon.png" class="logo" />
+        <img src="/favicon.png" class="logo" alt="Logo de Museo RecordArte" />
         <a class="toparriba" href="#top">Museo <span
             style="font-family:Recordarte; font-size:0.70rem; text-transform: uppercase;">Recordarte</span></a>
       </div>
@@ -28,18 +30,18 @@
 
   <div class="hero-wrap" id="top">
     <section class="hero">
-      <div class="hero-img"><img src="torta.jpg" alt="The cafe room, people at the tables under warm pendant lights"
-          fetchpriority="high"></div>
+      <div class="hero-img"><img src="torta.jpg" alt="Fondo conceptual de la Casa por la Memoria" fetchpriority="high">
+      </div>
       <div class="wrap">
         <h1>Memoria, Verdad y Justicia</h1>
-        <p class="h-sub">Mira estas obras de arte censuradas</p>
+        <p class="h-sub">Descubre las expresiones artísticas que desafiaron la censura y el silencio.</p>
         <div class="h-cta">
-          <a class="btn hbtn" href="obras.html">Ver las obras</a>
+          <a class="btn hbtn" href="obras.html">Ver el acervo</a>
         </div>
       </div>
     </section>
 
-    <div class="fold" aria-label="On the counter right now">
+    <div class="fold" aria-label="Noticias recientes">
       <span class="tick" id="tick"><b></b></span>
     </div>
   </div>
@@ -51,27 +53,29 @@
       </div>
       <div class="t-grid">
         <div class="tile big">
-          <div class="ph"><img src="torta.jpg" alt="Croissants fresh on the baking tray"></div>
-          <h3>Entrevistas</h3>
-          <p>Visita nuestras entrevistas a artistas y gente del ámbito para informarte más!</p>
+          <a href="entrevista.html" class="hlink__ausencia" style="display: flex; flex-direction: column;">
+            <div class="ph"><img src="torta.jpg" alt="Fotografía de una entrevista en proceso"></div>
+            <h3>Entrevistas</h3>
+            <p>Escucha las voces de artistas, referentes de los derechos humanos y trabajadores culturales sobre el rol
+              del arte en la construcción de la memoria.</p>
+          </a>
         </div>
         <div class="t-col">
           <div class="tile">
             <a href="ausencia.html" class="hlink__ausencia">
-              <div class="ph"><img src="Ausencia__Sala.webp" alt="A filled baguette sandwich on a plate"></div>
+              <div class="ph"><img src="Ausencia__Sala.webp" alt="Instalación de la Sala de las Ausencias"></div>
               <h3>Sala de las Ausencias</h3>
-              <p>Encuentra las fechas donde esté esta experiencia inmersiva y real con una gran reflexión y ambientación
-              </p>
+              <p>Adéntrate en una experiencia inmersiva que invita a la reflexión profunda sobre los vacíos que dejó el
+                terrorismo de Estado.</p>
             </a>
           </div>
           <div class="tile">
             <a href="obras.html" class="hlink__ausencia">
-              <div class="ph"><img src="Obras_sala.png" alt="A slice of cake and a flat white by the window">
+              <div class="ph"><img src="Obras_sala.png" alt="Muestra digital de obras de arte">
               </div>
               <h3>Sala de Obras</h3>
-              <p>Visita nuestro acerbo digital donde digitalizamos y hacemos accesibles las obras de arte para el
-                público
-              </p>
+              <p>Explora nuestro acervo digital, un espacio diseñado para preservar, democratizar y hacer accesibles
+                piezas fundamentales de nuestra historia.</p>
             </a>
           </div>
         </div>
@@ -82,17 +86,16 @@
   <section class="v-main" id="visit">
     <div class="wrap v-grid">
       <figure class="v-fig">
-        <div class="ph"><img src="Ausencia4.webp" alt="Imagen explicar"></div>
+        <div class="ph"><img src="Ausencia4.webp" alt="Detalle visual de la experiencia en la Sala de las Ausencias">
+        </div>
       </figure>
       <div>
         <div class="hoursboard">
           <h2>Sala de las Ausencias</h2>
-          <p class="hb-now js-open-msg">Fechas y Horarios</p>
-          <div class="hgroup"><span class="hd">Lunes 9 de Noviembre</span>
-            <span class="hd">Facultad de Artes, Diseño y
-              Ciencias de la Cultura</span>
-            <span class="ht">7:00 a
-              16:00</span>
+          <p class="hb-now js-open-msg">Fechas y Horarios de la Exhibición</p>
+          <div class="hgroup"><span class="hd">Sábado 7 de Noviembre</span>
+            <span class="hd">San Juan 1428</span>
+            <span class="ht">10:00 a 12:00<br>16:00 a 18:00</span>
           </div>
           <div class="hgroup hdisable"><span class="hd">Por confirmar</span><span class="ht">...</span></div>
           <div class="hgroup hdisable"><span class="hd">Próximamente</span><span class="ht">...</span></div>
@@ -100,20 +103,21 @@
         <div class="particulars">
           <div class="pt">
             <h3>Lugar</h3>
-            <p><small>Facultad de Arte, Diseño y Ciencias de la Cultura Av. Castelli 1300</small>
+            <p><small>San Juan 1428</small>
             </p>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.057927212234!2d-58.98475662454112!3d-27.468233876320546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cf23f83176b%3A0x63a71e4d45bab878!2sFacultad%20de%20Artes%2C%20Dise%C3%B1o%20y%20Ciencias%20de%20la%20Cultura%20(FADyCC%20-%20UNNE))!5e1!3m2!1sen!2sar!4v1792983946282!5m2!1sen!2sar"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3217.217234434184!2d-58.8403181249548!3d-27.47359277631727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456c987f652f17%3A0xc9e6511dd28ab14f!2sSan%20Juan%201428%2C%20W3400%20Corrientes!5e1!3m2!1sen!2sar!4v1793684014718!5m2!1sen!2sar"
               width="300" height="150" style="border-radius:15px;" allowfullscreen="" loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin" id="maps"></iframe>
+              referrerpolicy="strict-origin-when-cross-origin" id="maps"
+              title="Ubicación de la exhibición en el mapa"></iframe>
           </div>
           <div class="pt">
             <h3>Número de Contacto</h3>
-            <p><a href="tel:+54 9 3794 00-0736">3794 00-0736</a><small></small></p>
+            <p><a href="tel:+5493794000736">3794 00-0736</a><small></small></p>
           </div>
           <div class="pt">
             <h3>Correo de Contacto</h3>
-            <p><a href="mailto:museorecordarte0@gmail.com">museorecordarte0@gmail.com</a><small></small></p>
+            <p><a href="mailto:museorecordarte@gmail.com">museorecordarte@gmail.com</a><small></small></p>
           </div>
         </div>
         <a class="btn" href="ausencia.html" rel="noopener">Ver más <svg viewBox="0 0 24 24" fill="none"
@@ -124,12 +128,15 @@
     </div>
   </section>
 
+  <a href="obra_new.html">Acá</a>
+
   <footer class="foot">
     <div class="wrap">
       <div class="foot-grid">
         <div>
           <p class="fbrand">Recordarte</p>
-          <p class="fabout">Un proyecto transmedia sobre el CPM, la memoria y el arte</p>
+          <p class="fabout">Un proyecto transmedia sobre la Casa por la Memoria (CPM), los derechos humanos y el arte en
+            el Chaco.</p>
         </div>
         <div>
           <ul>
@@ -137,19 +144,17 @@
         </div>
         <div>
           <h4>Contactos</h4>
-          <a class="foot__cont" href="tel:+54 9 3794 00-0736">3794 00-0736</a><br>
-          <a class="foot__cont" href="mailto:museorecordarte0@gmail.com">museorecordarte0@gmail.com</a><br>
-          </p>
+          <a class="foot__cont" href="tel:+5493794000736">3794 00-0736</a><br>
+          <a class="foot__cont" href="mailto:museorecordarte@gmail.com">museorecordarte@gmail.com</a><br>
         </div>
       </div>
       <div class="foot-bot">
-        <span>&copy; ...</span>
+        <span>&copy; Museo RecordArte | Seminario 3</span>
       </div>
     </div>
   </footer>
 
-  <button id="parriba">
-
+  <button id="parriba" aria-label="Volver arriba">
     <svg width="25" height="25" viewBox="0 0 190.11545 195.3711" version="1.1" id="svg1"
       xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
       <defs id="defs1" />
@@ -168,11 +173,9 @@
         </g>
       </g>
     </svg>
-
   </button>
+
   <script src="source.js" type="module"></script>
-  <!-- <script src="lenis.min.js" type="module"></script> -->
-  <!-- <script src="site.js" type="module"></script> -->
 </body>
 
 </html>
