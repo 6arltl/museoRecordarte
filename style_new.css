@@ -226,6 +226,13 @@ h2:hover::after {
   line-height: 1.5;
   color: #333333;
   opacity: 0.9;
+
+  /* Truncado con puntos suspensivos */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Cantidad de renglones visibles antes de cortar (ajustar a 2 o 3) */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ==========================================================================
@@ -259,8 +266,8 @@ h2:hover::after {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); */
+  /* -webkit-backdrop-filter: blur(4px); */
 }
 
 .modal__card {

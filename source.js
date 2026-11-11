@@ -36,7 +36,7 @@ function showContent() {
 
 const CODIGOS_SECRETOS = {
   lll: () => latripleele(),
-  independiente: () => dinos(),
+  juampi: () => dinos(),
   noe: () => ganarDineroFalso(),
   clear: () => reiniciarTodo(),
   chicoschicos: () => chicoschicos(),
@@ -110,7 +110,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const baseImg = document.getElementById("zoom__base_img");
   const targetImg = document.getElementById("zoom__target_img");
   const modalTitle = modal.querySelector(".modal__content h1");
-  const modalText = modal.querySelector(".modal__content p");
+
+  // Cambiado para apuntar al nuevo contenedor
+  const modalDesc =
+    modal.querySelector(".modal__desc") ||
+    modal.querySelector(".modal__content p");
+
   const closeBtn = modal.querySelector(".modal__close");
   const overlay = modal.querySelector(".modal__overlay");
 
@@ -120,11 +125,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const ZOOM_SCALE = 2;
 
-  const openModal = (imgSrc, title, desc) => {
+  const openModal = (imgSrc, title, descHtml) => {
     if (baseImg && imgSrc) baseImg.src = imgSrc;
     if (targetImg && imgSrc) targetImg.src = imgSrc;
     if (modalTitle && title) modalTitle.textContent = title;
-    if (modalText && desc) modalText.textContent = desc;
+
+    // innerHTML renderiza el texto completo preservando <ul>, <li>, <br> y negritas
+    if (modalDesc && descHtml) modalDesc.innerHTML = descHtml;
 
     modal.classList.add("is-active");
     document.body.style.overflow = "hidden";
@@ -150,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       openModal(
         img ? img.getAttribute("src") : "",
         title ? title.textContent.trim() : "Obra de Arte",
-        desc ? desc.textContent.trim() : "",
+        desc ? desc.innerHTML.trim() : "", // Extrae todo el contenido HTML completo
       );
     });
   });
@@ -162,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal();
   });
 
+  // (El resto del código de zoom y carrusel se mantiene intacto)
   // Motor del Zoom estilo Amazon
   const handleMouseMove = (e) => {
     if (window.innerWidth < 768) return;
