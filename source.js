@@ -275,3 +275,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "ArrowRight") nextSlide();
   });
 });
+
+// MUSICA
+
+var audioToPlay = document.getElementById("audioFile");
+
+window.onload = function () {
+  audioToPlay.play();
+};
